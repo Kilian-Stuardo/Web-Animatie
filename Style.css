@@ -1,0 +1,27 @@
+#Layer_1 {
+  width: 100%;
+  height: auto;
+}
+
+@keyframes redAnimation {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    fill: #f69107;
+  }
+  50% {
+     fill: #f8e711;
+    }
+  75% {
+     fill: #2d8601;
+    }
+  100% {
+    fill: #031528;
+  }
+}
+
+rect {
+  animation: redAnimation 1s ease;
+  animation-delay: 1s;
+}
