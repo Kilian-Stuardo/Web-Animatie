@@ -56,11 +56,20 @@ rect {
   cursor: pointer;
 }
 
-.B-last:hover{
-  fill: pink;
+.black:hover {
+  fill: #DA4567;
 }
 
-.B-middle:hover #cross-svg{
+.cross-svg:hover {
+  filter: grayscale(1000%) sepia(10%);
+}
+
+.circle{
+
+
+}
+
+/* .B-middle:hover #cross-svg{
 	-webkit-animation: Laydown 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 	        animation: Laydown 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 }
@@ -74,4 +83,4 @@ rect {
             transform: translateY(150px) translateZ(130px) rotateX(90deg);
             transform-origin: top center;
   }
-}
+} */
