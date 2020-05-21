@@ -39,11 +39,17 @@ rect {
   animation-delay: 1s;
 }
 
+.animate {
+  /* transform: translateX(-200px); */
+  transition: transform .5s ease-in;
+}
+
 .colors {
   display: flex;
   position: fixed;
   bottom: 3em;
   right: 5em;
+  z-index: 99;
 }
 
 .color {
@@ -56,29 +62,13 @@ rect {
   cursor: pointer;
 }
 
-.black:hover {
-  fill: #DA4567;
+.B-last:hover{
+  fill: pink;
 }
 
-.cross-svg:hover {
-  filter: grayscale(1000%) sepia(10%);
-}
+.click{
+   animation: Laydown 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 
-.circle{
-
-
-
-}
-
-.down{
-  transform: translateY(40vh);
-}
-
-
-
-/* .B-middle:hover #cross-svg{
-	-webkit-animation: Laydown 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
-	        animation: Laydown 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 }
 
 @keyframes Laydown {
@@ -90,4 +80,4 @@ rect {
             transform: translateY(150px) translateZ(130px) rotateX(90deg);
             transform-origin: top center;
   }
-} */
+}
