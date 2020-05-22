@@ -66,6 +66,67 @@ rect {
   fill: pink;
 }
 
+
+.mobile-controls{
+  transform: scale(20%);
+  display: flex;
+  position: fixed;
+  bottom: 10em;
+  right: 0em;
+  z-index: 99;
+  margin: 0 -5px;
+}
+
+
+#arrow-right{
+  transform: rotate(180deg);
+  margin: 0 5px;
+}
+
+#reload{
+  margin: 0 5px;
+}
+
+#arrow-left{
+  right: 5em;
+  margin: 0 5px;
+
+}
+
+.arrow-up{
+  transform: scale(20%);
+  display: flex;
+  position: fixed;
+  bottom: 7em;
+  right: 0em;
+  z-index: 99;
+  margin: 0 -5px;
+
+}
+
+#arrow-up{
+  transform: rotate(270deg) !important;
+
+
+}
+
+.arrow-down{
+  transform: scale(20%);
+  display: flex;
+  position: fixed;
+  bottom: -2em;
+  right: 0em;
+  z-index: 99;
+  margin: 0 -5px;
+
+}
+
+#arrow-down{
+  transform: rotate(90deg) !important;
+
+
+}
+
 .click{
    animation: Laydown 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 
@@ -81,3 +142,35 @@ rect {
             transform-origin: top center;
   }
 }
+
+/* 2436x1125px at 458ppi */
+@media only screen
+    and (device-width : 375px)
+    and (device-height : 812px)
+    and (-webkit-device-pixel-ratio : 3) {
+
+
+
+.colors{
+  right: 3em;
+}
+
+#container{
+  display: flex;
+  position: fixed;
+}
+
+.cross-whole{
+
+transform: translateY(0);
+height: 2em;
+width: 2em;
+
+}
+
+
+
+
+
+
+    }
