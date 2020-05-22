@@ -67,69 +67,35 @@ rect {
 }
 
 
-.mobile-controls{
-  transform: scale(20%);
-  display: flex;
-  position: fixed;
-  bottom: 10em;
-  right: 0em;
-  z-index: 99;
-  margin: 0 -5px;
-}
 
 
-#arrow-right{
-  transform: rotate(180deg);
-  margin: 0 5px;
-}
-
-#reload{
-  margin: 0 5px;
-}
-
-#arrow-left{
-  right: 5em;
-  margin: 0 5px;
+.mobile-controls {
+  display:none;
 
 }
 
-.arrow-up{
-  transform: scale(20%);
-  display: flex;
-  position: fixed;
-  bottom: 7em;
-  right: 0em;
-  z-index: 99;
-  margin: 0 -5px;
-
-}
-
-#arrow-up{
-  transform: rotate(270deg) !important;
-
-
+.mid-controls {
+  display: block;
+  text-align: center;
 }
 
 .arrow-down{
-  transform: scale(20%);
-  display: flex;
-  position: fixed;
-  bottom: -2em;
-  right: 0em;
-  z-index: 99;
+  width: 10%;
   margin: 0 -5px;
-
 }
 
 #arrow-down{
   transform: rotate(90deg) !important;
+  z-index: 999;
+}
 
-
+#arrow-down:hover{
+  background-color: grey;
+  transition: all .3s ease-in;
 }
 
 .click{
    animation: Laydown 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
-
 }
 
 @keyframes Laydown {
@@ -143,11 +109,73 @@ rect {
   }
 }
 
-/* 2436x1125px at 458ppi */
-@media only screen
-    and (device-width : 375px)
-    and (device-height : 812px)
-    and (-webkit-device-pixel-ratio : 3) {
+
+@media (min-width: 375px) {
+
+  .mobile-controls{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 1;
+    margin-top: 304px;
+  }
+
+.cross-svg{
+  transform: scale(20em) !important;
+}
+
+  #arrow-right{
+    margin: 0 5px;
+    width: 10%;
+    z-index: 999;
+  }
+
+  #reload{
+    width: 10%;
+    margin: 0 5px;
+    z-index: 999;
+  }
+
+  #arrow-left{
+    transform: rotate(180deg);
+    right: 5em;
+    margin: 0 5px;
+    width:10%;
+    z-index: 999;
+  }
+
+  #arrow-left:hover {
+  background-color:orange;
+  transition: all .2s ease-in;
+  }
+
+  #arrow-right:hover {
+    background-color:green;
+    transition: all .2s ease-in;
+  }
+
+  #reload:hover {
+    background-color: red;
+    transition: all .2s ease-in;
+  }
+
+  .arrow-up{
+    width: 10%;
+    display: block;
+    z-index: 999;
+    margin: 0 -5px;
+  }
+
+  #arrow-up{
+    transform: rotate(270deg) !important;
+    z-index: 999;
+  }
+
+  #arrow-up:hover{
+    background-color: wheat;
+    transition: all .2s ease-in;
+  }
+
 
 
 
@@ -155,22 +183,5 @@ rect {
   right: 3em;
 }
 
-#container{
-  display: flex;
-  position: fixed;
-}
-
-.cross-whole{
-
-transform: translateY(0);
-height: 2em;
-width: 2em;
 
 }
-
-
-
-
-
-
-    }

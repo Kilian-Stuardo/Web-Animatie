@@ -1,30 +1,9 @@
-
-// var animation = document.querySelector('circle');
-// console.log(animation);
-//
-// animation.addEventListener('click', toggle);
-//
-// function toggle(){
-//   animation.classList.toggle('click');
-// }
-
-
-
-// //keyboard cross breakup
-// var cross = document.querySelector('.red');
-//
-// window.addEventListener('keydown', toggle)
-//
-// function toggle(event) {
-//   if (event.keycode === 40) {
-//     cross.classList.add('down');
-//
-//   }
-//   if(event.keycode === 38){
-//     cross.classList.remove('down');
-//   }
-// }
-
+// click button
+var leftArrow = document.querySelector("#arrow-left");
+var rightArrow = document.querySelector("#arrow-right");
+var downArrow = document.querySelector("#arrow-down");
+var upArrow = document.querySelector("#arrow-up");
+var reloadButton = document.querySelector('#reload');
 
 // click color
 var el = document.getElementsByClassName("color");
@@ -94,69 +73,107 @@ window.addEventListener('keydown', toggle)
 function toggle(event) {
   console.log(event);
 
-// left key
+  // left key
   if (event.keyCode === 37) {
-    let pressed = Pixels.leftPressed--;
-    getAllLeft.forEach((item) => {
-      item.classList.add('animate');
-      setValuesForRectLeftRight(item, pressed * 10);
-    })
+    pressLeftLogic();
   }
 
   //right key
   if (event.keyCode === 39) {
-    let pressed = Pixels.rightPressed++;
-    getAllRight.forEach((item) => {
-      item.classList.add('animate');
-      setValuesForRectLeftRight(item, pressed * 10);
-    })
+    pressRightLogic();
   }
 
   //up key
   if (event.keyCode === 38) {
-    let pressed = Pixels.upPressed--;
-    getAllUp.forEach((item) => {
-      item.classList.add('animate');
-      setValuesForRectUpDown(item, pressed);
-    })
+    pressUpLogic();
   }
 
   // down key
   if (event.keyCode === 40) {
-    let pressed = Pixels.downPressed++;
-    getAllDown.forEach((item) => {
-      item.classList.add('animate');
-      setValuesForRectUpDown(item, pressed);
-    })
+    pressDownLogic();
   }
 
   // space to return
   if (event.keyCode === 32) {
-      Pixels = {
-        leftPressed: 0,
-        rightPressed: 0,
-        upPressed: 0,
-        downPressed: 0,
-      };
-      getAllDown.forEach((item) => {
-        setValuesForRectUpDown(item, 0);
-        setValuesForRectLeftRight(item, 0);
-      })
-      getAllLeft.forEach((item) => {
-        setValuesForRectUpDown(item, 0);
-        setValuesForRectLeftRight(item, 0);
-      })
-      getAllRight.forEach((item) => {
-        setValuesForRectUpDown(item, 0);
-        setValuesForRectLeftRight(item, 0);
-      })
-      getAllUp.forEach((item) => {
-        setValuesForRectUpDown(item, 0);
-        setValuesForRectLeftRight(item, 0);
-      })
-    }
+    pressReloadLogic();
+  }
 
 }
+
+// eventlistener on the left arrow
+leftArrow.addEventListener('click', pressLeftLogic)
+
+// eventlistener on the right arrow
+rightArrow.addEventListener('click', pressRightLogic)
+
+// eventlistener on the up arrow
+upArrow.addEventListener('click', pressUpLogic)
+
+// eventlistener on the downarrow
+downArrow.addEventListener('click', pressDownLogic)
+// eventlistener on the reload button
+reloadButton.addEventListener('click', pressReloadLogic)
+
+// functionality of pressing left
+function pressLeftLogic() {
+  let pressed = Pixels.leftPressed--;
+  getAllLeft.forEach((item) => {
+    item.classList.add('animate');
+    setValuesForRectLeftRight(item, pressed * 10);
+  })
+}
+
+// functionality of pressing right
+function pressRightLogic() {
+  let pressed = Pixels.rightPressed++;
+  getAllRight.forEach((item) => {
+    item.classList.add('animate');
+    setValuesForRectLeftRight(item, pressed * 10);
+  })
+}
+// up logic
+function pressUpLogic() {
+  let pressed = Pixels.upPressed--;
+  getAllUp.forEach((item) => {
+    item.classList.add('animate');
+    setValuesForRectUpDown(item, pressed);
+  })
+}
+// reload press down logic
+function pressDownLogic() {
+  let pressed = Pixels.downPressed++;
+  getAllDown.forEach((item) => {
+    item.classList.add('animate');
+    setValuesForRectUpDown(item, pressed);
+  })
+}
+
+// reload function
+function pressReloadLogic() {
+  Pixels = {
+    leftPressed: 0,
+    rightPressed: 0,
+    upPressed: 0,
+    downPressed: 0,
+  };
+  getAllDown.forEach((item) => {
+    setValuesForRectUpDown(item, 0);
+    setValuesForRectLeftRight(item, 0);
+  })
+  getAllLeft.forEach((item) => {
+    setValuesForRectUpDown(item, 0);
+    setValuesForRectLeftRight(item, 0);
+  })
+  getAllRight.forEach((item) => {
+    setValuesForRectUpDown(item, 0);
+    setValuesForRectLeftRight(item, 0);
+  })
+  getAllUp.forEach((item) => {
+    setValuesForRectUpDown(item, 0);
+    setValuesForRectLeftRight(item, 0);
+  })
+}
+
 
 // change x value
 function setValuesForRectLeftRight(rectangle, translateX) {
