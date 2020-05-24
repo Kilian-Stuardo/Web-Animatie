@@ -72,15 +72,67 @@ rect {
 
 }
 
+.black .left{
+
+fill:#031528;
+
+}
+
+.black .up{
+
+fill:#031528;
+
+}
+
+.black .down{
+
+fill:#031528;
+
+}
+
+.black .right{
+
+fill:#031528;
+
+}
+
+.black: rect:nth-of-type(2n){
+  fill:pink;
+}
+
+.black:nth-child(2n){
+  fill: pink;
+}
 
 
 .B-middle:hover  {
+    fill: #270C40;
+    opacity: 1;
+
+}
+
+.left:hover  {
+    fill: #ec008c;
+    opacity: 1;
+
+}
+.right:hover  {
     fill: #ec008c;
     opacity: 1;
 
 }
 
+.up:hover  {
+    fill: #ec008c;
+    opacity: 1;
 
+}
+
+.down:hover  {
+    fill: #ec008c;
+    opacity: 1;
+
+}
 
 
 .mobile-controls {
@@ -114,9 +166,9 @@ rect {
 
 }
 
-.click{
+/* .click{
   transform: scale(1.2);
-  /* animation: Laydown 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both; */
+  animation: Laydown 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 }
 
 @keyframes Laydown {
@@ -128,7 +180,7 @@ rect {
             transform: translateY(150px) translateZ(130px) rotateX(90deg);
             transform-origin: top center;
   }
-}
+} */
 
 
 @media (max-width: 375px) {

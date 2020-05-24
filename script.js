@@ -1,4 +1,4 @@
-// click button
+// mobile controls
 var leftArrow = document.querySelector("#arrow-left");
 var rightArrow = document.querySelector("#arrow-right");
 var downArrow = document.querySelector("#arrow-down");
@@ -17,6 +17,7 @@ var Pixels = {
   upPressed: 0,
   downPressed: 0,
 };
+
 // All the parents
 var getAllRed = document.querySelector(".red").children;
 var getAllOrange = document.querySelector(".orange").children;
@@ -31,6 +32,7 @@ var originalColors = {
   black: '#031528',
 }
 
+//click
 var ea = document.querySelector('.B-middle');
 console.log(ea);
 
@@ -148,7 +150,7 @@ function pressUpLogic() {
     setValuesForRectUpDown(item, pressed);
   })
 }
-// reload press down logic
+// press down logic
 function pressDownLogic() {
   let pressed = Pixels.downPressed++;
   getAllDown.forEach((item) => {
@@ -197,6 +199,3 @@ function setValuesForRectUpDown(rectangle, translateY) {
   let transformString = `translateY(${translateY}px)`;
   rectangle.style.transform = transformString;
 }
-
-
-var ea
