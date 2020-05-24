@@ -31,6 +31,15 @@ var originalColors = {
   black: '#031528',
 }
 
+var ea = document.querySelector('.B-middle');
+console.log(ea);
+
+ea.addEventListener('click', toggle);
+
+function toggle(){
+  ea.classList.toggle('click');
+}
+
 
 console.log(getAllLeft);
 // click event on all buttons
@@ -188,3 +197,6 @@ function setValuesForRectUpDown(rectangle, translateY) {
   let transformString = `translateY(${translateY}px)`;
   rectangle.style.transform = transformString;
 }
+
+
+var ea

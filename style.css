@@ -1,9 +1,12 @@
+
 body,
 html {
   margin: 0;
   padding: 0;
   height: 100%;
+  overflow: hidden
 }
+
 
 #container {
   position: relative;
@@ -15,6 +18,7 @@ html {
   position: relative;
   z-index: 2;
 }
+
 
 @keyframes redAnimation {
   0% {
@@ -62,8 +66,18 @@ rect {
   cursor: pointer;
 }
 
-.B-last:hover{
-  fill: pink;
+
+.B-middle{
+  fill:#031528;
+
+}
+
+
+
+.B-middle:hover  {
+    fill: #ec008c;
+    opacity: 1;
+
 }
 
 
@@ -94,8 +108,15 @@ rect {
   transition: all .3s ease-in;
 }
 
+
+.circle{
+
+
+}
+
 .click{
-   animation: Laydown 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+  transform: scale(1.2);
+  /* animation: Laydown 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both; */
 }
 
 @keyframes Laydown {
